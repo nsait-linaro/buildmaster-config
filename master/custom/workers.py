@@ -249,4 +249,10 @@ def get_workers(settings):
             tags=['windows', 'win8', 'amd64', 'x86-64'],
             parallel_tests=4,
         ),
+        cpw(
+            name="nsait-win-amd64",
+            tags=['windows', 'win10', 'arm64'],
+            parallel_tests=4,
+        ),
+
     ]

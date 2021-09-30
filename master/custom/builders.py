@@ -27,6 +27,8 @@ from custom.factories import (
     Windows64RefleakBuild,
     Windows64ReleaseBuild,
     MacOSArmWithBrewBuild,
+    WindowsArm64Build,
+    WindowsArm64ReleaseBuild,
 )
 
 STABLE = "stable"
@@ -185,6 +187,10 @@ def get_builders(settings):
         ("AMD64 Cygwin64 on Windows 10", "bray-win10-cygwin-amd64", UnixBuild, UNSTABLE),
         ("PPC64 AIX", "edelsohn-aix-ppc64", AIXBuild, UNSTABLE),
         ("PPC64 AIX XLC", "edelsohn-aix-ppc64", AIXBuildWithXLC, UNSTABLE),
+
+        # Windows/arm64
+        ("ARM64 Windows", "nsait-win-amd64", WindowsArm64Build, STABLE),
+        ("ARM64 Windows Non-Debug", "nsait-win-amd64", WindowsArm64ReleaseBuild, STABLE),
     ]
 
 
@@ -217,4 +223,5 @@ ONLY_MASTER_BRANCH = (
     "Alpine Linux",
     # Cygwin is not supported on 2.7, 3.6, 3.7
     "Cygwin",
+    # TODO: add win/arm64
 )
